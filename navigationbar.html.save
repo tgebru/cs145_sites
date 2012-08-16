@@ -1,0 +1,30 @@
+<div id="tray">
+<?php 
+
+?>
+    <ul>
+        <li><a href="index.php">Homepage</a></li><!--- Active page -->
+        <li><a href="ending.php?count=10">Ending Soon!</a></li>
+        <li><a href="categories.php">Categories</a></li>
+        <li class="asearch"><a href="asearch.php">Advanced Search</a></li>
+    </ul>
+  
+    <!--- Search --->
+    <div id="search" class="box">
+         <form action="ending.php" method="get">
+              <div class="box">
+                <div id="search-input"><span class="noscreen"></span><input type="text" size="30" id="query" name="keyword" value="Search" /></div>
+                <input type="hidden" name="count" value="50"/>
+                <div id="search-submit"><img src="images/search-submit.gif" value="OK" /></div>
+               </div> <!---box--!>
+         </form>
+    </div> <!---- search ---->
+
+    <script type="text/javascript">
+      $("#query").click(function() {
+	if ($(this).val() == "Search") {
+	    $(this).val("");
+	}
+      });
+    </script>
+</div> <!---tray--->

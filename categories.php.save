@@ -1,0 +1,39 @@
+<html>
+    <head>
+      <title>AuctionBase</title>
+    </head>
+
+    <?php 
+      include ('./header.php');
+    ?>
+
+    <?php 
+      include ('./navigationbar.html');
+    ?>
+    <?php 
+      include ('./mysqldb.php');
+    ?>
+
+    <div id="col-bottom"></div>
+    <hr class="noscreen" />
+
+    <!-- 2 columns -->
+
+    <ul class="ul-list nomb">
+	<?php
+	    $query = "select distinct Category from Categories";
+	    try {
+                foreach ($db->query($query) as $row){
+		    $category = $row['Category']; 
+        ?> 
+                <br /><br /><li><a href=<?php echo "ending.php?category=". $category; ?>><?php echo $category; ?></a></span> 
+       <?php
+                  }
+	    } catch (PDOException $e) {
+		echo "query failed: " . $e->getMessage();
+	    }
+	$db=null;
+
+	?>
+    </ul>
+<html>

@@ -1,0 +1,36 @@
+<html>
+    <?php 
+      include ('./header.php');
+    ?>
+    <?php 
+      include ('./navigationbar.html');
+    ?>
+    <?php 
+      include ('./mysqldb.php');
+    ?>
+    <hr class="noscreen" />
+    
+    <!---2 columns --->
+    <div id="cols2-top"></div>
+    <div id="cols2" class="box">
+	
+	<!--search box--->
+	<div id="col-right">
+	   <h4 class="title"><span>Filter</span></hr>
+	   <div class="box">
+	       <label class="four">Category: All</label><br /><br />
+	       <form class="s" action="ending.php" method="get">
+		   <label class="four"><input type="radio" class="text_field" name="contains" value="contains"/>Contains<input type="radio" class="text_field" name="contains" value="starts" checked />Starts with</label> <br /><br />
+		   <label class="four">Keyword<input type="text" size="23" class="text_field" name="keyword" id="query2" value="" /></label> <br /><br />
+		   <label>Search in: <input type="checkbox" class="text_field" name="searchtitle" id="searchtitle" checked/> Title <input type="checkbox" class="text_field" name="searchdesc" id="searchdesc" /> Description</label> <br /><br />
+		   <label class="four">Order by <input type="radio" class="text_field" name="orderby" value="price"/> Lowest Price<input type="radio" class="text_field" name="orderby" value="" checked /> Ending Soonest</label> <br /><br />
+		  <div style="float:left;clear:both;">Items priced between<br/><input type="text" size="10" class="text_field numeric" name="minprice" id="minprice"/>and <input type="text" size="10" class="text_field_numeric" name="maxprice" id="maxprice" /><br /><br />
+		  <label>Sale format: <input type="checkbox" class="text_field" name="buynow" id="buynow" />Buy It Now</label><br /><br />
+		  <label>Only Closed Auctions: <input type="checkbox" class="text_field" name="closed" id="closed" /></label><br /><br />
+		  <label class="four">Show <select name="count" id="count" class="chzn-select" data-placeholder="Choose a category or multiple" style="width:70px;"><option value="25">25</option><option value="50>50</option><option value="100">100</option></select> results</label><br /><br />
+                 <input type="submit" class="lefts button4" value="Search"/>
+	  </div> <!--/box-->
+	</div> <!--/col-right-->
+     </div> <!---/cols2-->
+   </body>
+</html> 
